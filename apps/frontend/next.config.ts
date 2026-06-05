@@ -3,7 +3,7 @@ import type { NextConfig } from 'next';
 const BACKEND_ORIGIN = process.env.BACKEND_ORIGIN || 'http://127.0.0.1:8000';
 
 const nextConfig: NextConfig = {
-  output: 'standalone',
+  output: process.env.VERCEL ? undefined : 'standalone',
   experimental: {
     proxyTimeout: 240_000,
     // Tree-shake barrel imports — saves ~200-800ms cold start per route
