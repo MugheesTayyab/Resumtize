@@ -117,6 +117,31 @@ docker run --name resumtize \
 
 ---
 
+## 🚀 Deploying to Vercel & Production
+
+Resumtize is built as a split-architecture application:
+1. **Frontend**: Next.js (React 19, Tailwind 4)
+2. **Backend**: FastAPI (Python 3.13)
+
+For production, you deploy the frontend to **Vercel** and the backend API to a Python hosting provider (such as **Railway**, **Render**, **Fly.io**, or **DigitalOcean**).
+
+### Step 1: Deploy the Backend API
+Deploy the FastAPI backend first (located in `apps/backend`):
+- **Root Directory**: `apps/backend`
+- **Build/Install Command**: `uv sync` or `pip install -r requirements.txt`
+- **Start Command**: `python -m app` (or `uvicorn app.main:app --host 0.0.0.0 --port $PORT`)
+- **Environment Variables**: Configure your LLM API keys (e.g. `OPENAI_API_KEY`, `GEMINI_API_KEY`, etc.) and set `FRONTEND_BASE_URL` to your Vercel URL once deployed to configure CORS.
+
+### Step 2: Deploy the Frontend to Vercel
+Link your GitHub repository to Vercel and configure the project settings as follows:
+- **Framework Preset**: `Next.js`
+- **Root Directory**: `apps/frontend`
+- **Build & Development Settings**: Keep defaults (Vercel will build it automatically).
+- **Environment Variables**:
+  - `BACKEND_ORIGIN`: Set this to your deployed Backend API URL (e.g. `https://resumtize-api.onrender.com`). Next.js will route your backend traffic dynamically.
+
+---
+
 ## 📄 License
 
 This project is licensed under the Apache License 2.0. See [LICENSE](LICENSE) for details.
