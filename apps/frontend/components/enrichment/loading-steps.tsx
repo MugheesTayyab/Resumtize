@@ -125,7 +125,7 @@ export function ErrorStep({ error, onRetry, onClose }: ErrorStepProps) {
       </div>
       <div className="text-center max-w-md">
         <p className="text-xl font-mono font-bold">{t('enrichment.error.title')}</p>
-        <p className="text-sm text-red-600 mt-2 font-mono bg-red-50 p-3 border border-red-200">
+        <p className="text-sm text-destructive mt-2 font-mono bg-red-50 p-3 border border-red-200">
           {error}
         </p>
       </div>

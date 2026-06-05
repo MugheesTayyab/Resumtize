@@ -33,10 +33,10 @@
     "popupBlocked": "弹窗被阻止。请允许弹窗或手动打开此链接：{url}"
   },
   "home": {
-    "brandLine1": "简历",
-    "brandLine2": "匹配器",
-    "docs": "使用文档",
-    "launchApp": "启动应用"
+    "brandLine1": "Resum",
+    "brandLine2": "tize",
+    "docs": "文档",
+    "launchApp": "启动 Resumtize"
   },
   "nav": {
     "dashboard": "仪表板",

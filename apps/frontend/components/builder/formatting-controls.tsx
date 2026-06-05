@@ -146,14 +146,14 @@ export const FormattingControls: React.FC<FormattingControlsProps> = ({ settings
   };
 
   return (
-    <div className="border border-black bg-white shadow-sw-default">
+    <div className="border border-border bg-white shadow-pb-default">
       {/* Header - Always Visible */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className="w-full flex items-center justify-between p-3 hover:bg-paper-tint transition-colors"
       >
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-blue-700"></div>
+          <div className="w-2 h-2 bg-primary"></div>
           <span className="font-mono text-xs font-bold uppercase tracking-wider">
             {t('builder.formatting.panelTitle')}
           </span>
@@ -167,7 +167,7 @@ export const FormattingControls: React.FC<FormattingControlsProps> = ({ settings
 
       {/* Expandable Content */}
       {isExpanded && (
-        <div className="border-t border-black p-4 space-y-6">
+        <div className="border-t border-border p-4 space-y-6">
           {/* Template Selection */}
           <div>
             <h4 className="font-mono text-xs font-bold uppercase tracking-wider mb-3 text-ink-soft">
@@ -181,7 +181,7 @@ export const FormattingControls: React.FC<FormattingControlsProps> = ({ settings
                   className={`group flex flex-col items-center p-2 border transition-all ${
                     settings.template === template.id
                       ? 'border-blue-700 bg-white shadow-[2px_2px_0px_0px_#1D4ED8]'
-                      : 'border-black bg-white hover:bg-paper-tint hover:shadow-sw-xs'
+                      : 'border-border bg-white hover:bg-paper-tint hover:shadow-sw-xs'
                   }`}
                   title={templateLabels[template.id].description}
                 >
@@ -193,7 +193,7 @@ export const FormattingControls: React.FC<FormattingControlsProps> = ({ settings
                   </div>
                   <span
                     className={`font-mono text-[9px] uppercase tracking-wider font-bold ${
-                      settings.template === template.id ? 'text-blue-700' : 'text-ink-soft'
+                      settings.template === template.id ? 'text-primary' : 'text-ink-soft'
                     }`}
                   >
                     {templateLabels[template.id].name}
@@ -217,7 +217,7 @@ export const FormattingControls: React.FC<FormattingControlsProps> = ({ settings
                     className={`flex items-center gap-2 px-3 py-2 border font-mono text-xs transition-all ${
                       settings.accentColor === color
                         ? 'border-blue-700 bg-white shadow-[2px_2px_0px_0px_#1D4ED8]'
-                        : 'border-black bg-white hover:bg-paper-tint'
+                        : 'border-border bg-white hover:bg-paper-tint'
                     }`}
                     title={t(`builder.formatting.accentColors.${color}`)}
                   >
@@ -244,8 +244,8 @@ export const FormattingControls: React.FC<FormattingControlsProps> = ({ settings
                   onClick={() => handlePageSizeChange(size)}
                   className={`flex-1 px-3 py-2 border font-mono text-xs transition-all ${
                     settings.pageSize === size
-                      ? 'border-blue-700 bg-white text-blue-700 shadow-[2px_2px_0px_0px_#1D4ED8]'
-                      : 'border-black bg-white text-ink-soft hover:bg-paper-tint'
+                      ? 'border-blue-700 bg-white text-primary shadow-[2px_2px_0px_0px_#1D4ED8]'
+                      : 'border-border bg-white text-ink-soft hover:bg-paper-tint'
                   }`}
                   title={PAGE_SIZE_INFO[size].dimensions}
                 >
@@ -339,8 +339,8 @@ export const FormattingControls: React.FC<FormattingControlsProps> = ({ settings
                       onClick={() => handleHeaderFontChange(font)}
                       className={`px-2 py-1 font-mono text-xs border transition-all ${
                         settings.fontSize.headerFont === font
-                          ? 'bg-blue-700 text-white border-blue-700 shadow-sw-xs'
-                          : 'bg-white text-ink-soft border-steel-grey hover:border-black'
+                          ? 'bg-primary text-white border-blue-700 shadow-sw-xs'
+                          : 'bg-white text-ink-soft border-steel-grey hover:border-border'
                       }`}
                       style={{
                         fontFamily:
@@ -368,8 +368,8 @@ export const FormattingControls: React.FC<FormattingControlsProps> = ({ settings
                       onClick={() => handleBodyFontChange(font)}
                       className={`px-2 py-1 font-mono text-xs border transition-all ${
                         settings.fontSize.bodyFont === font
-                          ? 'bg-blue-700 text-white border-blue-700 shadow-sw-xs'
-                          : 'bg-white text-ink-soft border-steel-grey hover:border-black'
+                          ? 'bg-primary text-white border-blue-700 shadow-sw-xs'
+                          : 'bg-white text-ink-soft border-steel-grey hover:border-border'
                       }`}
                       style={{
                         fontFamily:
@@ -400,7 +400,7 @@ export const FormattingControls: React.FC<FormattingControlsProps> = ({ settings
                   onClick={handleCompactModeToggle}
                   className={`relative w-10 h-5 border-2 transition-all ${
                     settings.compactMode
-                      ? 'bg-blue-700 border-blue-700'
+                      ? 'bg-primary border-blue-700'
                       : 'bg-white border-steel-grey'
                   }`}
                 >
@@ -421,7 +421,7 @@ export const FormattingControls: React.FC<FormattingControlsProps> = ({ settings
                   onClick={handleShowContactIconsToggle}
                   className={`relative w-10 h-5 border-2 transition-all ${
                     settings.showContactIcons
-                      ? 'bg-blue-700 border-blue-700'
+                      ? 'bg-primary border-blue-700'
                       : 'bg-white border-steel-grey'
                   }`}
                 >
@@ -519,16 +519,16 @@ const MarginSlider: React.FC<MarginSliderProps> = ({ label, value, onChange }) =
         max={25}
         value={value}
         onChange={(e) => onChange(parseInt(e.target.value, 10))}
-        className="flex-1 h-1 bg-paper-tint rounded-none appearance-none cursor-pointer
+        className="flex-1 h-1 bg-paper-tint rounded-lg appearance-none cursor-pointer
                    [&::-webkit-slider-thumb]:appearance-none
                    [&::-webkit-slider-thumb]:w-3
                    [&::-webkit-slider-thumb]:h-3
-                   [&::-webkit-slider-thumb]:bg-blue-700
+                   [&::-webkit-slider-thumb]:bg-primary
                    [&::-webkit-slider-thumb]:border-none
                    [&::-webkit-slider-thumb]:cursor-pointer
                    [&::-moz-range-thumb]:w-3
                    [&::-moz-range-thumb]:h-3
-                   [&::-moz-range-thumb]:bg-blue-700
+                   [&::-moz-range-thumb]:bg-primary
                    [&::-moz-range-thumb]:border-none
                    [&::-moz-range-thumb]:cursor-pointer"
       />
@@ -561,8 +561,8 @@ const SpacingSelector: React.FC<SpacingSelectorProps> = ({ label, value, onChang
             onClick={() => onChange(level)}
             className={`w-6 h-6 font-mono text-xs border transition-all ${
               value === level
-                ? 'bg-blue-700 text-white border-blue-700 shadow-sw-xs'
-                : 'bg-white text-ink-soft border-steel-grey hover:border-black'
+                ? 'bg-primary text-white border-blue-700 shadow-sw-xs'
+                : 'bg-white text-ink-soft border-steel-grey hover:border-border'
             }`}
           >
             {level}

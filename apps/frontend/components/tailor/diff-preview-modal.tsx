@@ -63,14 +63,14 @@ export function DiffPreviewModal({
           }
         }}
       >
-        <DialogContent className="max-w-5xl max-h-[90vh] overflow-hidden flex flex-col p-6 bg-background border-2 border-black shadow-sw-lg">
-          <DialogHeader className="border-b-2 border-black pb-4 bg-white -mx-6 -mt-6 px-6 pt-6">
+        <DialogContent className="max-w-5xl max-h-[90vh] overflow-hidden flex flex-col p-6 bg-background border-2 border-border shadow-pb-lg">
+          <DialogHeader className="border-b-2 border-border pb-4 bg-white -mx-6 -mt-6 px-6 pt-6">
             <DialogTitle className="font-serif text-2xl font-bold uppercase tracking-tight">
               {t('tailor.missingDiffDialog.title')}
             </DialogTitle>
           </DialogHeader>
 
-          <div className="mt-6 border-2 border-black bg-white p-4 font-mono text-xs text-ink-soft">
+          <div className="mt-6 border-2 border-border bg-white p-4 font-mono text-xs text-ink-soft">
             {t('tailor.missingDiffDialog.description')}
           </div>
           <div className="mt-3 flex items-center gap-2 font-mono text-xs text-amber-700">
@@ -78,7 +78,7 @@ export function DiffPreviewModal({
             <span>{t('tailor.missingDiffDialog.confirmLabel')}</span>
           </div>
 
-          <div className="flex justify-end items-center gap-3 pt-4 border-t-2 border-black bg-white -mx-6 -mb-6 px-6 py-4">
+          <div className="flex justify-end items-center gap-3 pt-4 border-t-2 border-border bg-white -mx-6 -mb-6 px-6 py-4">
             <Button variant="outline" onClick={onClose} disabled={isConfirming} className="gap-2">
               {t('common.cancel')}
             </Button>
@@ -126,8 +126,8 @@ export function DiffPreviewModal({
         }
       }}
     >
-      <DialogContent className="max-w-5xl max-h-[90vh] overflow-hidden flex flex-col p-6 bg-background border-2 border-black shadow-sw-lg">
-        <DialogHeader className="border-b-2 border-black pb-4 bg-white -mx-6 -mt-6 px-6 pt-6">
+      <DialogContent className="max-w-5xl max-h-[90vh] overflow-hidden flex flex-col p-6 bg-background border-2 border-border shadow-pb-lg">
+        <DialogHeader className="border-b-2 border-border pb-4 bg-white -mx-6 -mt-6 px-6 pt-6">
           <DialogTitle className="font-serif text-2xl font-bold uppercase tracking-tight">
             {t('tailor.diffModal.title')}
           </DialogTitle>
@@ -138,7 +138,7 @@ export function DiffPreviewModal({
         </DialogHeader>
 
         {/* Summary cards */}
-        <div className="border-2 border-black bg-white p-4 mt-4">
+        <div className="border-2 border-border bg-white p-4 mt-4">
           <div className="flex items-center gap-2 mb-3">
             <div className="w-3 h-3 bg-primary"></div>
             <h3 className="font-mono text-sm font-bold uppercase tracking-wider">
@@ -299,7 +299,7 @@ export function DiffPreviewModal({
         </div>
 
         {/* Action buttons */}
-        <div className="flex justify-between items-center pt-4 border-t-2 border-black bg-white -mx-6 -mb-6 px-6 py-4">
+        <div className="flex justify-between items-center pt-4 border-t-2 border-border bg-white -mx-6 -mb-6 px-6 py-4">
           <Button variant="outline" onClick={onReject} disabled={isConfirming} className="gap-2">
             <X className="w-4 h-4" />
             {t('tailor.diffModal.rejectButton')}
@@ -366,7 +366,7 @@ interface ChangeSectionProps {
 
 function ChangeSection({ title, count, isExpanded, onToggle, children }: ChangeSectionProps) {
   return (
-    <div className="border-2 border-black bg-white">
+    <div className="border-2 border-border bg-white">
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between p-3 hover:bg-paper-tint"
@@ -379,7 +379,7 @@ function ChangeSection({ title, count, isExpanded, onToggle, children }: ChangeS
         </div>
       </button>
 
-      {isExpanded && <div className="border-t-2 border-black p-4 space-y-3">{children}</div>}
+      {isExpanded && <div className="border-t-2 border-border p-4 space-y-3">{children}</div>}
     </div>
   );
 }
@@ -413,7 +413,7 @@ function ChangeItem({ change }: ChangeItemProps) {
   };
 
   return (
-    <div className={`p-3 border border-black ${typeBackgrounds[change.change_type]}`}>
+    <div className={`p-3 border border-border ${typeBackgrounds[change.change_type]}`}>
       <div className="flex items-start gap-2">
         <span
           className={`font-mono text-base font-bold uppercase tracking-wider ${typeGlyphColors[change.change_type]}`}

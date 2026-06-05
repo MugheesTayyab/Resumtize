@@ -33,10 +33,10 @@
     "popupBlocked": "Se bloqueó la ventana emergente. Permite las ventanas emergentes o abre manualmente esta URL: {url}"
   },
   "home": {
-    "brandLine1": "Currículum",
-    "brandLine2": "Matcher",
-    "docs": "Guía de uso",
-    "launchApp": "Iniciar app"
+    "brandLine1": "Resum",
+    "brandLine2": "tize",
+    "docs": "Documentación",
+    "launchApp": "Iniciar Resumtize"
   },
   "nav": {
     "dashboard": "Panel",
@@ -565,7 +565,8 @@
       "rateLimit": "Se alcanzó el límite de tasa. Espera aproximadamente un minuto e inténtalo de nuevo.",
       "failedToGenerate": "No se pudo generar el currículum. Revisa tu clave API en Configuración e inténtalo de nuevo.",
       "failedToPreview": "No se pudo previsualizar el currículum. Revisa tu clave API en Configuración e inténtalo de nuevo.",
-      "failedToConfirm": "No se pudieron aplicar los cambios. Inténtalo de nuevo."
+      "failedToConfirm": "No se pudieron aplicar los cambios. Inténtalo de nuevo.",
+      "timeout": "The request timed out. Please try again with a shorter job description or check your connection."
     }
   },
   "settings": {

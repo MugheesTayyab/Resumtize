@@ -33,10 +33,10 @@
     "popupBlocked": "Popup blocked. Please allow popups or open this URL manually: {url}"
   },
   "home": {
-    "brandLine1": "Resume",
-    "brandLine2": "Matcher",
-    "docs": "Docs",
-    "launchApp": "Launch App"
+    "brandLine1": "Resum",
+    "brandLine2": "tize",
+    "docs": "Documentation",
+    "launchApp": "Launch Resumtize"
   },
   "nav": {
     "dashboard": "Dashboard",

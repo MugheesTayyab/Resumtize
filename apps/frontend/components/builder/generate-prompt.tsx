@@ -49,7 +49,7 @@ export function GeneratePrompt({
         <p className="font-mono text-xs text-steel-grey max-w-md mb-6 leading-relaxed">
           {t('builder.generatePrompt.notAvailableDescription', { title })}
         </p>
-        <div className="flex items-center gap-2 text-blue-700 font-mono text-xs">
+        <div className="flex items-center gap-2 text-primary font-mono text-xs">
           <span>{t('builder.generatePrompt.goToDashboard')}</span>
           <ArrowRight className="w-4 h-4" />
         </div>
@@ -65,7 +65,7 @@ export function GeneratePrompt({
       )}
     >
       <div className="w-16 h-16 border-2 border-blue-700 bg-blue-50 flex items-center justify-center mb-6">
-        <Icon className="w-8 h-8 text-blue-700" />
+        <Icon className="w-8 h-8 text-primary" />
       </div>
       <h3 className="font-mono text-sm font-bold uppercase tracking-wider mb-3">
         {t('builder.generatePrompt.generateTitle', { title })}

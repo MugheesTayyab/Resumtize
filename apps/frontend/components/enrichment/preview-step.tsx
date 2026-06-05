@@ -55,9 +55,9 @@ function EnhancementCard({ enhancement }: EnhancementCardProps) {
       : t('enrichment.itemType.project');
 
   return (
-    <div className="border-2 border-black bg-white shadow-sw-default">
+    <div className="border-2 border-border bg-white shadow-pb-default">
       {/* Card header */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-black bg-paper-tint">
+      <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-paper-tint">
         {enhancement.item_type === 'experience' ? (
           <Briefcase className="w-4 h-4" />
         ) : (

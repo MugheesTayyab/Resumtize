@@ -12,7 +12,7 @@ const RichTextEditor = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="min-h-[100px] border border-black bg-transparent" aria-busy="true" />
+      <div className="min-h-[100px] border border-border bg-transparent" aria-busy="true" />
     ),
   }
 );
@@ -103,7 +103,7 @@ export const ProjectsForm: React.FC<ProjectsFormProps> = ({ data, onChange }) =>
           variant="outline"
           size="sm"
           onClick={handleAdd}
-          className="rounded-none border-black hover:bg-black hover:text-white transition-colors"
+          className="rounded-lg border-border hover:bg-black hover:text-white transition-colors"
         >
           <Plus className="w-4 h-4 mr-2" /> {t('builder.forms.projects.addProject')}
         </Button>
@@ -111,7 +111,7 @@ export const ProjectsForm: React.FC<ProjectsFormProps> = ({ data, onChange }) =>
 
       <div className="space-y-8">
         {data.map((item) => (
-          <div key={item.id} className="p-6 border border-black bg-paper-tint relative group">
+          <div key={item.id} className="p-6 border border-border bg-paper-tint relative group">
             <Button
               variant="ghost"
               size="icon"
@@ -132,7 +132,7 @@ export const ProjectsForm: React.FC<ProjectsFormProps> = ({ data, onChange }) =>
                   value={item.name || ''}
                   onChange={(e) => handleChange(item.id, 'name', e.target.value)}
                   placeholder={t('builder.forms.projects.placeholders.projectName')}
-                  className="rounded-none border-black bg-white"
+                  className="rounded-lg border-border bg-white"
                 />
               </div>
               <div className="space-y-2">
@@ -143,7 +143,7 @@ export const ProjectsForm: React.FC<ProjectsFormProps> = ({ data, onChange }) =>
                   value={item.role || ''}
                   onChange={(e) => handleChange(item.id, 'role', e.target.value)}
                   placeholder={t('builder.forms.projects.placeholders.role')}
-                  className="rounded-none border-black bg-white"
+                  className="rounded-lg border-border bg-white"
                 />
               </div>
               <div className="space-y-2">
@@ -155,7 +155,7 @@ export const ProjectsForm: React.FC<ProjectsFormProps> = ({ data, onChange }) =>
                   value={item.years || ''}
                   onChange={(e) => handleChange(item.id, 'years', e.target.value)}
                   placeholder={t('builder.forms.projects.placeholders.years')}
-                  className="rounded-none border-black bg-white"
+                  className="rounded-lg border-border bg-white"
                 />
               </div>
               <div className="space-y-2">
@@ -167,7 +167,7 @@ export const ProjectsForm: React.FC<ProjectsFormProps> = ({ data, onChange }) =>
                   value={item.github || ''}
                   onChange={(e) => handleChange(item.id, 'github', e.target.value)}
                   placeholder={t('builder.forms.projects.placeholders.github')}
-                  className="rounded-none border-black bg-white"
+                  className="rounded-lg border-border bg-white"
                 />
               </div>
               <div className="space-y-2 md:col-span-2">
@@ -180,7 +180,7 @@ export const ProjectsForm: React.FC<ProjectsFormProps> = ({ data, onChange }) =>
                   value={item.website || ''}
                   onChange={(e) => handleChange(item.id, 'website', e.target.value)}
                   placeholder={t('builder.forms.projects.placeholders.website')}
-                  className="rounded-none border-black bg-white"
+                  className="rounded-lg border-border bg-white"
                 />
               </div>
             </div>
@@ -194,7 +194,7 @@ export const ProjectsForm: React.FC<ProjectsFormProps> = ({ data, onChange }) =>
                   variant="ghost"
                   size="sm"
                   onClick={() => handleAddDescription(item.id)}
-                  className="h-6 text-xs text-blue-700 hover:text-blue-800 hover:bg-blue-50"
+                  className="h-6 text-xs text-primary hover:text-blue-800 hover:bg-blue-50"
                 >
                   <Plus className="w-3 h-3 mr-1" /> {t('builder.genericItemForm.actions.addPoint')}
                 </Button>
@@ -226,7 +226,7 @@ export const ProjectsForm: React.FC<ProjectsFormProps> = ({ data, onChange }) =>
         ))}
 
         {data.length === 0 && (
-          <div className="text-center py-12 bg-paper-tint border border-dashed border-black">
+          <div className="text-center py-12 bg-paper-tint border border-dashed border-border">
             <p className="font-mono text-sm text-steel-grey mb-4">
               {t('builder.genericItemForm.noEntries', { label: t('resume.sections.projects') })}
             </p>
@@ -234,7 +234,7 @@ export const ProjectsForm: React.FC<ProjectsFormProps> = ({ data, onChange }) =>
               variant="outline"
               size="sm"
               onClick={handleAdd}
-              className="rounded-none border-black"
+              className="rounded-lg border-border"
             >
               <Plus className="w-4 h-4 mr-2" /> {t('builder.forms.projects.addFirstProject')}
             </Button>

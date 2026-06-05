@@ -1,0 +1,18 @@
+<svg width="180" height="50" viewBox="0 0 180 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eab308" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+  <!-- Left Emblem (Mini R monogram + Spark) -->
+  <g transform="translate(5, 5) scale(0.6)">
+    <rect x="18" y="15" width="8" height="40" rx="4" fill="url(#goldPurple)" />
+    <path d="M18 19 C18 19, 32 10, 42 19 C52 28, 42 39, 26 39" fill="none" stroke="url(#goldPurple)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M28 35 L48 55" fill="none" stroke="url(#goldPurple)" stroke-width="8" stroke-linecap="round" />
+    <path d="M48 20 L52 12 L56 20 L64 24 L56 28 L52 36 L48 28 L40 24 Z" fill="#eab308" />
+  </g>
+  <!-- Right Text: Resumtize -->
+  <text x="52" y="32" font-family="'Jost', system-ui, -apple-system, sans-serif" font-weight="700" font-size="22" fill="#1e1b4b" letter-spacing="-0.5">Resumtize</text>
+</svg>

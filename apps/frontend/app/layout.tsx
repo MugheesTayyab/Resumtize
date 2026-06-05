@@ -1,31 +1,31 @@
 import type { Metadata } from 'next';
-import { Geist, Space_Grotesk } from 'next/font/google';
+import { Jost, Playfair_Display } from 'next/font/google';
 import './(default)/css/globals.css';
 
-const spaceGrotesk = Space_Grotesk({
-  variable: '--font-space-grotesk',
+const jost = Jost({
+  variable: '--font-jost',
   subsets: ['latin'],
   display: 'swap',
 });
 
-const geist = Geist({
-  variable: '--font-geist',
+const playfairDisplay = Playfair_Display({
+  variable: '--font-playfair',
   subsets: ['latin'],
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'Resume Matcher',
-  description: 'Build your resume with Resume Matcher',
-  applicationName: 'Resume Matcher',
-  keywords: ['resume', 'matcher', 'job', 'application'],
+  title: 'Resumtize — AI Resume Tailor',
+  description: 'AI-Powered Resume Tailoring and Optimization Engine by Mughees',
+  applicationName: 'Resumtize',
+  keywords: ['resumtize', 'resume matcher', 'resume builder', 'resume AI', 'mughees'],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-US" className="h-full" suppressHydrationWarning>
       <body
-        className={`${geist.variable} ${spaceGrotesk.variable} antialiased bg-background text-ink-soft min-h-full`}
+        className={`${jost.variable} ${playfairDisplay.variable} antialiased bg-background text-foreground min-h-full`}
       >
         {children}
       </body>

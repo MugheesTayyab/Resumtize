@@ -2,56 +2,81 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslations } from '@/lib/i18n';
 
 export default function Hero() {
   const { t } = useTranslations();
 
-  // Hover translates DOWN-RIGHT (+1, +1) for the press-in effect — matches
-  // every other button in the codebase. The previous version translated
-  // UP-LEFT (-1, -1) which was the inverse and looked broken next to the
-  // rest of the design system.
   const buttonClass =
-    'group relative border border-black bg-transparent px-8 py-3 font-mono text-sm font-bold uppercase text-blue-700 transition-[transform,box-shadow,background-color,color] duration-150 ease-out hover:bg-blue-700 hover:text-background hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-sw-default active:translate-x-0 active:translate-y-0 active:shadow-none cursor-pointer';
+    'group relative flex items-center justify-center border border-primary/30 bg-surface px-8 py-3 font-sans text-sm font-semibold tracking-wide text-foreground transition-all duration-300 ease-out hover:bg-primary hover:text-white hover:scale-[1.02] hover:shadow-pb-glow rounded-lg';
 
   return (
     <section
-      className="h-screen w-full p-4 md:p-12 lg:p-24 bg-background"
+      className="relative h-screen w-full p-4 md:p-12 lg:p-24 overflow-hidden"
       style={{
-        backgroundImage:
-          'linear-gradient(rgba(29, 78, 216, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(29, 78, 216, 0.1) 1px, transparent 1px)',
-        backgroundSize: '40px 40px',
+        background: 'radial-gradient(at 0% 0%, rgba(234, 179, 8, 0.32) 0px, transparent 55%), radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.16) 0px, transparent 50%), #ffffff',
       }}
     >
-      <div className="flex h-full w-full flex-col items-center justify-center border border-black text-blue-700 bg-background shadow-sw-xl">
-        <h1 className="mb-12 text-center font-mono text-6xl font-bold uppercase leading-none tracking-tighter md:text-8xl lg:text-9xl selection:bg-blue-700 selection:text-white">
-          {t('home.brandLine1')}
+      {/* Subtle brand glow effects */}
+      <div className="absolute inset-0 z-0 flex items-center justify-between opacity-50 pointer-events-none">
+        <div className="w-[600px] h-[600px] rounded-full bg-primary/35 blur-[120px] -ml-32 -mt-32" />
+        <div className="w-[600px] h-[600px] rounded-full bg-pb-indigo/18 blur-[120px] -mr-32 -mb-32" />
+      </div>
+
+      <div className="relative z-10 flex h-full w-full flex-col items-center justify-center border border-border bg-white/65 glass rounded-2xl shadow-pb-xl px-4 py-16">
+        <div className="mb-6 flex justify-center">
+          <Image
+            src="/logo.svg"
+            alt="Resumtize Logo"
+            width={64}
+            height={64}
+            className="w-16 h-16 drop-shadow-[0_0_12px_rgba(250,204,21,0.5)]"
+          />
+        </div>
+
+        <h1 className="mb-4 text-center font-display text-5xl font-bold leading-tight tracking-tight text-yellow-400 md:text-7xl lg:text-8xl" style={{ textShadow: '0 0 25px rgba(250, 204, 21, 0.4)' }}>
+          {t('home.brandLine1')}{t('home.brandLine2')}
           <br />
-          {t('home.brandLine2')}
+          <span className="text-3xl md:text-5xl lg:text-6xl text-muted-foreground font-sans font-light tracking-normal">
+            RESUME OPTIMIZER
+          </span>
         </h1>
 
-        <div className="flex flex-col gap-4 md:flex-row md:gap-12">
+        <p className="mb-12 text-center font-sans text-lg md:text-xl text-primary font-medium tracking-wide">
+          AI-Powered Resume Optimization Engine
+        </p>
+
+        <div className="flex flex-col gap-4 md:flex-row md:gap-8">
           <a
             href="https://github.com/srbhr/Resume-Matcher"
             target="_blank"
             rel="noopener noreferrer"
             className={buttonClass}
           >
-            GitHub
+            Built by Mughees
           </a>
           <a
-            href="https://resumematcher.fyi"
+            href="https://github.com/srbhr/Resume-Matcher"
             target="_blank"
             rel="noopener noreferrer"
             className={buttonClass}
           >
             {t('home.docs')}
           </a>
-          <Link href="/dashboard" className={buttonClass}>
+          <Link
+            href="/dashboard"
+            className={cn(buttonClass, 'bg-primary text-white border-primary/50 shadow-pb-glow')}
+          >
             {t('home.launchApp')}
           </Link>
         </div>
       </div>
     </section>
   );
+}
+
+// Inline helper for cn inside the component
+function cn(...classes: string[]) {
+  return classes.filter(Boolean).join(' ');
 }

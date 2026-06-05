@@ -74,8 +74,8 @@ export const RegenerateDialog: React.FC<RegenerateDialogProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px] p-0 gap-0 rounded-none">
-        <DialogHeader className="p-6 pb-4 border-b border-black">
+      <DialogContent className="sm:max-w-[600px] p-0 gap-0 rounded-lg">
+        <DialogHeader className="p-6 pb-4 border-b border-border">
           <DialogTitle className="font-serif text-xl font-bold uppercase tracking-tight">
             {t('builder.regenerate.selectDialog.title')}
           </DialogTitle>
@@ -93,7 +93,7 @@ export const RegenerateDialog: React.FC<RegenerateDialogProps> = ({
 
           {/* Experience Section */}
           {experienceItems.length > 0 && (
-            <div className="border border-black">
+            <div className="border border-border">
               <button
                 type="button"
                 onClick={() => toggleSection('experience')}
@@ -116,7 +116,7 @@ export const RegenerateDialog: React.FC<RegenerateDialogProps> = ({
                 )}
               </button>
               {expandedSections.has('experience') && (
-                <div className="border-t border-black">
+                <div className="border-t border-border">
                   {experienceItems.map((item) => (
                     <ItemRow
                       key={item.item_id}
@@ -132,7 +132,7 @@ export const RegenerateDialog: React.FC<RegenerateDialogProps> = ({
 
           {/* Projects Section */}
           {projectItems.length > 0 && (
-            <div className="border border-black">
+            <div className="border border-border">
               <button
                 type="button"
                 onClick={() => toggleSection('projects')}
@@ -153,7 +153,7 @@ export const RegenerateDialog: React.FC<RegenerateDialogProps> = ({
                 )}
               </button>
               {expandedSections.has('projects') && (
-                <div className="border-t border-black">
+                <div className="border-t border-border">
                   {projectItems.map((item) => (
                     <ItemRow
                       key={item.item_id}
@@ -169,7 +169,7 @@ export const RegenerateDialog: React.FC<RegenerateDialogProps> = ({
 
           {/* Skills Section */}
           {skillsItem && (
-            <div className="border border-black">
+            <div className="border border-border">
               <button
                 type="button"
                 onClick={() => toggleSection('skills')}
@@ -189,7 +189,7 @@ export const RegenerateDialog: React.FC<RegenerateDialogProps> = ({
                 )}
               </button>
               {expandedSections.has('skills') && (
-                <div className="border-t border-black">
+                <div className="border-t border-border">
                   <ItemRow
                     item={skillsItem}
                     isSelected={isSelected(skillsItem)}
@@ -201,17 +201,13 @@ export const RegenerateDialog: React.FC<RegenerateDialogProps> = ({
           )}
         </div>
 
-        <DialogFooter className="p-4 bg-secondary border-t border-black flex-row justify-end gap-3">
+        <DialogFooter className="p-4 bg-secondary border-t border-border flex-row justify-end gap-3">
           <DialogClose asChild>
-            <Button variant="outline" className="rounded-none border-black">
+            <Button variant="outline" className="rounded-lg border-border">
               {t('common.cancel')}
             </Button>
           </DialogClose>
-          <Button
-            onClick={onContinue}
-            disabled={selectedItems.length === 0}
-            className="rounded-none"
-          >
+          <Button onClick={onContinue} disabled={selectedItems.length === 0} className="rounded-lg">
             {t('builder.regenerate.selectDialog.continueButton')}
           </Button>
         </DialogFooter>
@@ -250,7 +246,7 @@ const ItemRow: React.FC<ItemRowProps> = ({ item, isSelected, onToggle }) => {
       {/* Checkbox */}
       <div
         className={`w-5 h-5 border-2 flex items-center justify-center transition-colors ${
-          isSelected ? 'border-blue-700 bg-blue-700' : 'border-black bg-white'
+          isSelected ? 'border-blue-700 bg-primary' : 'border-border bg-white'
         }`}
       >
         {isSelected && (

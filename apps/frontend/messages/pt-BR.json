@@ -33,10 +33,10 @@
     "popupBlocked": "Popup bloqueado. Por favor, permita popups ou abra esta URL manualmente: {url}"
   },
   "home": {
-    "brandLine1": "Resume",
-    "brandLine2": "Matcher",
+    "brandLine1": "Resum",
+    "brandLine2": "tize",
     "docs": "Documentação",
-    "launchApp": "Abrir App"
+    "launchApp": "Iniciar Resumtize"
   },
   "nav": {
     "dashboard": "Painel",
@@ -565,7 +565,8 @@
       "rateLimit": "Limite de requisições atingido. Aguarde cerca de um minuto e tente novamente.",
       "failedToGenerate": "Não foi possível gerar o currículo. Verifique sua chave de API em Configurações e tente novamente.",
       "failedToPreview": "Não foi possível pré-visualizar o currículo. Verifique sua chave de API em Configurações e tente novamente.",
-      "failedToConfirm": "Não foi possível aplicar as alterações. Tente novamente."
+      "failedToConfirm": "Não foi possível aplicar as alterações. Tente novamente.",
+      "timeout": "The request timed out. Please try again with a shorter job description or check your connection."
     }
   },
   "settings": {
