@@ -1,0 +1,12 @@
+{
+  "name": "resumtize-root",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/frontend"
+  ],
+  "scripts": {
+    "build": "npm run build --prefix apps/frontend",
+    "start": "npm run start --prefix apps/frontend"
+  }
+}
